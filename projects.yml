@@ -1,0 +1,49 @@
+---
+
+
+- name: Basic playbook for a Workflow
+  hosts: all
+  tasks:
+
+  - name: Query Projects
+    awx.awx.project:
+      validate_certs: no
+
+https://172.16.1.34/api/v2/projects/
+
+
+- name: Basic playbook for a Workflow
+  hosts: 172.16.1.45
+  tasks:
+
+  - name: Create Project
+    awx.awx.project:
+      validate_certs: no
+      controller_host: "{{ controller_host }}"
+      controller_username: "{{ controller_username }}"
+      controller_password: "{{ controller_password }}"
+      name: "(auto) Fortinet Project"
+      description: Created by Ansible Automation
+      organization: Default
+      scm_update_on_launch: True
+      scm_type: git
+      scm_url: "https://github.com/carlosfparada/Fortinet.git"
+      state: present
+
+  - name: Basic playbook for a Workflow
+    hosts: controller
+    tasks:
+
+    - name: Create Project
+      awx.awx.project:
+        validate_certs: no
+        controller_host: "{{ controller_host }}"
+        controller_username: "{{ controller_username }}"
+        controller_password: "{{ controller_password }}"
+        name: "(auto) Fortinet Project"
+        description: Created by Ansible Automation
+        organization: Default
+        scm_update_on_launch: True
+        scm_type: git
+        scm_url: "https://github.com/carlosfparada/Fortinet.git"
+        state: present
