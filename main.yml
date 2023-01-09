@@ -32,9 +32,9 @@
     #     #projects: all
     #   register: export_output
 
-    # - name: Import all assets from our export
-    #   import:
-    #     assets: "{{ export_output.assets }}"
+    - name: Import all assets from our export
+      import:
+        assets: "{{ hostvars['controller34']['export_output'].assets }}"
 
     - name: Debug
       debug:
