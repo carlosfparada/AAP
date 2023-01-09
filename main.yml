@@ -3,8 +3,9 @@
 - name: TBD
   connection: local
   hosts: controller34
+  vars_files: 
+  - mail.yml
   tasks:
-
   - name: Export all assets
     awx.awx.export:
       controller_host: "{{ controller_host }}"
