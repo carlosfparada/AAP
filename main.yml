@@ -1,8 +1,8 @@
 ---
 
 - name: TBD
-  connection: local
   hosts: controller34
+  connection: local
   vars_files: 
   - main.yml
   tasks:
