@@ -6,7 +6,8 @@
 
   - name: Export all assets
     awx.awx.export:
-      all: True
+      #all: True
+      inventory: all
     register: export_output
 
   - name: Debug
