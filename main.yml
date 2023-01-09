@@ -1,6 +1,7 @@
 ---
 
 - name: TBD
+  connection: local
   hosts: controller34
   tasks:
 
