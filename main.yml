@@ -33,7 +33,7 @@
     #   register: export_output
 
     - name: Import all assets from our export
-      import:
+      awx.awx.import:
         assets: "{{ hostvars['controller34']['export_output'].assets }}"
 
     - name: Debug
