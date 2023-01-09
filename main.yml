@@ -8,10 +8,10 @@
   tasks:
     - name: Export all assets
       awx.awx.export:
-        controller1_host: "{{ controller_host }}"
-        controller1_username: "{{ controller_username }}"
-        controller1_password: "{{ controller_password }}"
-        validate_certs: "{{ validate_certs }}"
+        controller_host: "{{ controller1_host }}"
+        controller_username: "{{ controller1_username }}"
+        controller_password: "{{ controller1_password }}"
+        validate_certs: "{{ controller1_validate_certs }}"
         all: True
         #projects: all
       register: export_output
@@ -22,15 +22,15 @@
   vars_files: 
   - defaults/main.yml
   tasks:
-    # - name: Export all assets
-    #   awx.awx.export:
-    #     controller2_host: "{{ controller_host }}"
-    #     controller2_username: "{{ controller_username }}"
-    #     controller3_password: "{{ controller_password }}"
-    #     validate_certs: "{{ validate_certs }}"
-    #     all: True
-    #     #projects: all
-    #   register: export_output
+    - name: Export all assets
+      awx.awx.export:
+        controller_host: "{{ controller2_host }}"
+        controller_username: "{{ controller2_username }}"
+        controller_password: "{{ controller2_password }}"
+        validate_certs: "{{ controller2_validate_certs }}"
+        all: True
+        #projects: all
+      register: export_output
 
     # - name: Import all assets from our export
     #   import:
