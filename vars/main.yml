@@ -1,4 +1,5 @@
-# Controller
-controller_host: "172.16.1.34"
-controller_username: "admin"
-controller_password: "Rfc1918!"
+# Controller .34
+controller_host: 172.16.1.34
+controller_username: admin
+controller_password: Rfc1918!
+validate_certs: false
