@@ -34,6 +34,10 @@
 
     - name: Import all assets from our export
       awx.awx.import:
+        controller_host: "{{ controller2_host }}"
+        controller_username: "{{ controller2_username }}"
+        controller_password: "{{ controller2_password }}"
+        validate_certs: "{{ controller2_validate_certs }}"
         assets: "{{ hostvars['controller34']['export_output'].assets }}"
 
     - name: Debug
