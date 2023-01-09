@@ -4,7 +4,7 @@
   hosts: controller34
   connection: local
   vars_files: 
-  - main.yml
+  - defaults/main.yml
   tasks:
     - name: Export all assets
       awx.awx.export:
