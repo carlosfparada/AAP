@@ -5,7 +5,7 @@
   tasks:
 
   - name: Export all assets
-    export:
+    awx.awx.export:
       all: True
     register: export_output
 
